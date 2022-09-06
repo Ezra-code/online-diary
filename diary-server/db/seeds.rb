@@ -1,9 +1,9 @@
 puts "🌱 Seeding spices..."
-justice = Event.new("this is when justice was served before everything else was done or made", '2')
-killer = Event.new("the killer was found and bound. he was wound in a round chain", '1')
+justice = Event.create(body: "this is when justice was served before everything else was done or made", emotion_id: 2)
+killer = Event.create(body: "the killer was found and bound. he was wound in a round chain", emotion_id: 1)
 
-happy = Emotion.new("happy")
-shock = Emotion.new("shocked")
+happy = Emotion.create(name: "happy")
+shock = Emotion.create(name: "shocked")
 # Seed your database here
 
 puts "✅ Done seeding!"
