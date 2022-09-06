@@ -11,7 +11,9 @@ class ApplicationController < Sinatra::Base
     events.to_json
   end
 
-
-
+  get '/emotions/:id' do
+    emotions = Emotion.find(params[:id])
+    emotions.to_json(only: [:name], include: {events: {only: [:body, :created_at]}})
+  end
 
 end
