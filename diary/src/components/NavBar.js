@@ -4,8 +4,8 @@ import { NavLink } from 'react-router-dom'
 const NavBar = () => {
 
   let linkStyle=({ isActive }) => ({
-                            color: isActive ? 'purple' : 'white',
-                            background: isActive ? 'white' : 'purple',
+                            color: isActive ? 'blueviolet' : 'white',
+                            background: isActive ? 'white' : 'blueviolet',
                         })
   return (
     <nav className="navbar">
