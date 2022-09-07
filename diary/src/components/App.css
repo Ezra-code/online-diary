@@ -15,12 +15,10 @@ body{
   color: white;
   display: flex;
   justify-content: space-between;
-  border: 1px solid black;
   padding: 1%;
 }
 
 ul{
-  border: 1px solid black;
   list-style: none;
   font-weight: bold;
   margin-right: 4%;
@@ -48,7 +46,9 @@ li:hover{
 }
 
 .header{
-  border: 1px solid black;
   padding: 10px;
   font-size: 35px;
+}
+.about{
+  background-color: white;
 }

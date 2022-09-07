@@ -1,4 +1,5 @@
 import './App.css'
+import {NavLink} from 'react-router-dom'
 const NavBar = () => {
   return (
     <nav className='navbar'>
@@ -6,7 +7,7 @@ const NavBar = () => {
       <ul>
         <li>Home</li>
         <li>Compose</li>
-        <li>About</li>
+        <li><NavLink to='about'>About</NavLink></li>
       </ul>
     </nav>
   );
