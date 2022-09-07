@@ -1,13 +1,31 @@
 import './App.css'
-import {NavLink} from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
+
 const NavBar = () => {
+
+  let linkStyle=({ isActive }) => ({
+                            color: isActive ? 'purple' : 'white',
+                            background: isActive ? 'white' : 'purple',
+                        })
   return (
-    <nav className='navbar'>
+    <nav className="navbar">
       <h2 className="header">My Diary</h2>
       <ul>
-        <li>Home</li>
-        <li>Compose</li>
-        <li><NavLink to='about'>About</NavLink></li>
+        <li>
+          <NavLink to="/" style={linkStyle}>
+            Home
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="compose" style={linkStyle}>
+            Compose
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="about" style={linkStyle}>
+            About
+          </NavLink>
+        </li>
       </ul>
     </nav>
   );
