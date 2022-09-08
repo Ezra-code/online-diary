@@ -3,16 +3,16 @@ import "./App.css";
 
 const Compose = () => {
   const [note, setNote] = useState({
-    emotion: "",
+    emotion:"",
     details: "",
   });
 
-  let i = 0;
-
     let emotions = ["Happy", "Sad", "Angry", "Calm", "Lazy", "Energetic"];
+    let i;
     //handleform submission 
-    function handlSubmit() {
-        console.log("New")
+    function handlSubmit(e) {
+        e.preventDefault()
+        console.log(note)
     }
 
     //handle input change
@@ -22,18 +22,47 @@ const Compose = () => {
         const value = event.target.value
 
         setNote({ ...note, [name]: value })
-        console.log(note)
+        // console.log(note)
     }
     
     //handle selection of feeling
   function handleClick(p) {
-    if (i < emotions.length) {
-      i++;
-      console.log(i);
-    }
+      switch (p) {
+        case "Happy":
+          i = 1;
+              setNote({ ...note, emotion: i })
+          break;
+        case "Sad":
+          i = 2;
+              setNote({ ...note, emotion: i });
+              console.log(i);
+          break;
+        case "Angry":
+          i = 3;
+              setNote({ ...note, emotion: i });
+              console.log(i);
+          break;
+        case "Calm":
+          i = 4;
+              setNote({ ...note, emotion: i });
+              console.log(i);
+          break;
+        case "Lazy":
+          i = 5;
+              setNote({ ...note, emotion: i });
+              console.log(i);
+          break;
+        case "Energetic":
+          i = 6;
+              setNote({ ...note, emotion: i });
+              console.log(i);
+              break;
+        default:
+          console.log("try the next buttons");
+      }
   }
   let radr = emotions.map((element) => (
-    <button className="emote" onClick={() => {handleClick()}}>{element}</button>
+    <button className="emote" onClick={() => {handleClick(element)}}>{element}</button>
   ));
 
   return (
