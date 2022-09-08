@@ -13,15 +13,16 @@ const Home = () => {
 
     console.log(emote)
 
-    const dispEmote = emote.forEach(element => {
-        console.log(element.name)
-    })
+    const dispEmote = emote.map((element) => 
+        <Display emote={element} key={element.id } />)
 
     return (
-        <>
-            <h1 className='feels'>How you feeling today</h1>
-            <Display />
-        </>
+      <>
+        <h1 className="feels">How you feeling today</h1>
+            <div className="container">
+                {dispEmote}
+            </div>
+      </>
     );
 }
  
