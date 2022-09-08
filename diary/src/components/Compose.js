@@ -80,12 +80,13 @@ const Compose = () => {
             <br />
             <input
               type="text"
-              placeholder="Enter first name"
+              placeholder="choose your mood"
               className="form-control"
               name="emotion"
               value={note.emotion}
               onChange={HandleChange}
-              required
+                          required
+                          disabled
             />
           </div>
           <div className="right">
