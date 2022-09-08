@@ -17,8 +17,12 @@ const Compose = () => {
 
     //handle input change
 
-    function HandleChange() {
-        
+    function HandleChange(event) {
+        const name = event.target.name
+        const value = event.target.value
+
+        setNote({ ...note, [name]: value })
+        console.log(note)
     }
     
     //handle selection of feeling
@@ -70,7 +74,9 @@ const Compose = () => {
               required
             />
           </div>
-        </div>
+              </div>
+              
+              <input type="submit" value="Save" />
       </form>
     </div>
   );
