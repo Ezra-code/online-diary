@@ -12,7 +12,7 @@ const Events = () => {
         .then(data => setEvent(data))
     }, [id])
     
-    console.log(event)
+    console.log(event.events)
     return ( <p>this is here and now</p> );
 }
  
