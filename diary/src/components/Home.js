@@ -18,7 +18,7 @@ const Home = () => {
 
     return (
       <>
-        <h1 className="feels">How you feeling today</h1>
+        <h1 className="feels">Remenisce on the Good, choose category</h1>
             <div className="container">
                 {dispEmote}
             </div>
