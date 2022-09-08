@@ -87,3 +87,30 @@ a:hover{
  .content p{
   margin-top: 5%;
  }
+
+ .feels{
+  text-align: center;
+  background-color: black;
+  color: white;
+  margin-top: 3%;
+  margin-left: 25%;
+  padding: 10px;
+  width: 50%;
+ }
+ .container{
+  background-color: black;
+  margin-left: 45%;
+  margin-top: 10%;
+  color: blueviolet;
+  width: 15%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 20px;
+ }
+ #feels{
+  background-color: aliceblue;
+  margin: 3%;
+  font-size: 30px;
+  padding: 10px;
+ }

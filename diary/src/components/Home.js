@@ -1,5 +1,6 @@
+import './App.css'
 import { useEffect, useState } from "react";
-
+import Display from './display';
 
 const Home = () => {
     let [emote, setEmote] = useState([])
@@ -7,10 +8,21 @@ const Home = () => {
     useEffect(() => {
         fetch("http://localhost:9292/emotions")
             .then(r => r.json())
-        .then(data => console.log(data))
+        .then(data => setEmote(data))
     }, [])
 
-    return (<p>this is the hompage</p>);
+    console.log(emote)
+
+    const dispEmote = emote.forEach(element => {
+        console.log(element.name)
+    })
+
+    return (
+        <>
+            <h1 className='feels'>How you feeling today</h1>
+            <Display />
+        </>
+    );
 }
  
 export default Home;
