@@ -14,25 +14,28 @@ const Events = () => {
                 setNotes(parsed)
         })
     }, [id])
+
+    function handleDelete(ele) {
+        console.log(ele.id)
+    }
     
 
     const eve = notes.map((element) => {
         let uploadDate = element.created_at
         let newDate = uploadDate.split("T")
-        const formatter = new Intl.RelativeTimeFormat('en')
-
-        const diff = new Date() - new Date(newDate[0])
-
-        const disp = formatter.format(Math.round(-diff / (1000*60 * 60)), 'hour')
-
-
         return (
-            <div className="story-prev" key={element.id}>
-                <h1>{element.title}</h1>
-                <h2><span>Created:</span> {disp}</h2>
-                <button>Delete</button>
-            </div>
-        )
+          <div className="story-prev" key={element.id}>
+            <h1>{element.title}</h1>
+            <h2>
+              <span>Created Date:</span> {newDate[0]}{" "}
+            </h2>
+            <h2>
+              <span>Created Time:</span> {newDate[1]}{" "}
+            </h2>
+
+                <button onClick={() => { handleDelete(element) }}>Delete</button>
+          </div>
+        );
     }
     )
     console.log(eve)

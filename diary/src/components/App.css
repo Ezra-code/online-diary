@@ -193,6 +193,7 @@ a:hover{
   background-color: azure;
   display: flex;
   flex-direction: column;
+  margin: 12px;
 }
 .story-prev > h2{
   text-align: left;
