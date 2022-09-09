@@ -170,6 +170,9 @@ a:hover{
   margin: 10px;
   cursor: pointer;
  }
+ #title{
+  color: black;
+ }
  textarea{
   height:150px;
  }

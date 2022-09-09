@@ -23,6 +23,7 @@ class ApplicationController < Sinatra::Base
 
   post '/events' do
     event = Event.create(
+      title: params[:title],
       body: params[:body],
       emotion_id: params[:emotion_id]
     )

@@ -1,21 +1,22 @@
 import { useState } from "react";
-// import {useHistory} from 'react-router-dom'
 import "./App.css";
 
 const Compose = () => {
   const [note, setNote] = useState({
     emotion:"",
     details: "",
+    tittle: ""
   });
 
     let emotions = ["Happy", "Sad", "Angry", "Calm", "Lazy", "Energetic"];
     let i;
-    // const histry = useHistory()
+  
 
     //handleform submission 
     function handlSubmit(e) {
         e.preventDefault()
-        const formData = {
+      const formData = {
+            title: note.tittle,
             body: note.details,
             emotion_id: note.emotion
 
@@ -90,44 +91,51 @@ const Compose = () => {
     <div className="compose">
       <h1>Write About your Day</h1>
       <h2>(How do you feel abut your day)</h2>
-          <div className="combine">{radr}</div>
-          
+      <div className="combine">{radr}</div>
+
       <form onSubmit={handlSubmit}>
         <div className="name">
           <div className="left">
-            <label htmlFor="name" className="form-label">
-              Mood:
-            </label>{" "}
-            <br />
+            <label htmlFor="mood">Mood:</label> <br />
             <input
               type="text"
               placeholder="choose your mood"
-              className="form-control"
               name="emotion"
               value={note.emotion}
               onChange={HandleChange}
-                          required
-                          disabled
+              required
+              disabled
             />
           </div>
+
+          <div className="left">
+            <label htmlFor="mood">Title:</label> <br />
+            <input
+              id="title"
+              type="text"
+              placeholder="Title"
+              name="tittle"
+              value={note.tittle}
+              onChange={HandleChange}
+              required
+            />
+          </div>
+
           <div className="right">
-            <label htmlFor="name" className="form-label">
-              Details
-            </label>{" "}
-            <br />
+            <label htmlFor="mood">Details</label> <br />
             <textarea
               type="text"
               placeholder="why do you feels so"
-              className="form-control"
               name="details"
               value={note.details}
               onChange={HandleChange}
               required
             />
           </div>
-              </div>
-              
-              <input type="submit" value="Save" />
+
+        </div>
+
+        <input type="submit" value="Save" />
       </form>
     </div>
   );
