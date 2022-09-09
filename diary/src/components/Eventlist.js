@@ -16,10 +16,28 @@ const Events = () => {
     }, [id])
     
 
-    const eve = notes.map((element) => <div className="story-prev" key={element.id}>   <h2>{element.created_at}</h2> </div>)
+    const eve = notes.map((element) => {
+        let uploadDate = element.created_at
+        let newDate = uploadDate.split("T")
+        const formatter = new Intl.RelativeTimeFormat('en')
+
+        const diff = new Date() - new Date(newDate[0])
+
+        const disp = formatter.format(Math.round(-diff / (1000*60 * 60)), 'hour')
+
+
+        return (
+            <div className="story-prev" key={element.id}>
+                <h1>{element.title}</h1>
+                <h2><span>Created:</span> {disp}</h2>
+                <button>Delete</button>
+            </div>
+        )
+    }
+    )
     console.log(eve)
     return (
-        <div>
+        <div className="prev">
             {eve}
         </div>
     );
