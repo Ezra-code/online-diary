@@ -13,7 +13,12 @@ class ApplicationController < Sinatra::Base
 
   get '/emotions/:id' do
     emotions = Emotion.find(params[:id])
-    emotions.to_json(only: [], include: {events: {only: [:body, :created_at]}})
+    emotions.to_json(only: [], include: {events: {only: [:id, :body, :created_at]}})
+  end
+
+  get '/events/:id' do
+    event = Event.find(params[:id])
+    event.to_json(only: [:body])
   end
 
   post '/events' do

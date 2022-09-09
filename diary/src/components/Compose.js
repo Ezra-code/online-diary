@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
+// import {useHistory} from 'react-router-dom'
 import "./App.css";
 
 const Compose = () => {
@@ -9,10 +10,30 @@ const Compose = () => {
 
     let emotions = ["Happy", "Sad", "Angry", "Calm", "Lazy", "Energetic"];
     let i;
+    // const histry = useHistory()
+
     //handleform submission 
     function handlSubmit(e) {
         e.preventDefault()
-        console.log(note)
+        const formData = {
+            body: note.details,
+            emotion_id: note.emotion
+
+        }
+
+        console.log(formData)
+
+        fetch("http://localhost:9292/events", {
+            method: "POST",
+            headers: {
+                "Content-Type":"application/json"
+            },
+            body:JSON.stringify(formData)
+        })
+            .then(
+            // histry.push('/')
+        )
+
     }
 
     //handle input change

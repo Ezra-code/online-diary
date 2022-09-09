@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2022_09_06_094707) do
   create_table "events", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "title"
     t.string "body"
     t.integer "emotion_id"
   end

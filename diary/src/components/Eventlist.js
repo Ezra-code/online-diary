@@ -3,17 +3,26 @@ import { useParams } from 'react-router-dom'
 
 
 const Events = () => {
-    const [event, setEvent] = useState("")
+    const [notes, setNotes] = useState([])
     const { id } = useParams()
     
     useEffect(() => {
         fetch(`http://localhost:9292/emotions/${id}`)
             .then(r => r.json())
-        .then(data => setEvent(data))
+            .then(data => {
+                let parsed = data.events
+                setNotes(parsed)
+        })
     }, [id])
     
-    console.log(event)
-    return ( <p>this is here and now</p> );
+
+    const eve = notes.map((element) => <div className="story-prev" key={element.id}>   <h2>{element.created_at}</h2> </div>)
+    console.log(eve)
+    return (
+        <div>
+            {eve}
+        </div>
+    );
 }
  
 export default Events;

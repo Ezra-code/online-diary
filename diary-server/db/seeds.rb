@@ -1,6 +1,6 @@
 puts "🌱 Seeding spices..."
-justice = Event.create(body: "this is when justice was served before everything else was done or made", emotion_id: 2)
-killer = Event.create(body: "the killer was found and bound. he was wound in a round chain", emotion_id: 1)
+justice = Event.create(title:"Never say never", body: "this is when justice was served before everything else was done or made", emotion_id: 2)
+killer = Event.create(title:"Loud Sound", body: "the killer was found and bound. he was wound in a round chain", emotion_id: 1)
 
 emotions = ["Happy", "Sad", "Angry", "Calm", "Lazy", "Energetic"]
 
