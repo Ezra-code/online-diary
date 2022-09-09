@@ -6,6 +6,7 @@ import About from "./About";
 import Home from "./Home";
 import Compose from "./Compose";
 import Events from "./Eventlist";
+
 function App() {
   return (
     <BrowserRouter>
@@ -14,7 +15,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="about" element={<About />} />
         <Route path="compose" element={<Compose />} />
-        <Route path="events/:id" element={<Events/>}/>
+        <Route path="events/:id" element={<Events />} />
       </Routes>
     </BrowserRouter>
 

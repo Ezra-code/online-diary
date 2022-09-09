@@ -33,7 +33,15 @@ const Compose = () => {
         })
             .then(
             // histry.push('/')
+              
+              
         )
+      
+      setNote({
+        emotion: "",
+        details: "",
+        tittle: "",
+      });
 
     }
 
