@@ -18,6 +18,16 @@ const Events = () => {
     console.log(ele.id);
   }
 
+  function handleCopy(param) {
+    navigator.clipboard.writeText(param.body)
+  }
+
+  function handleSound(param) {
+    let utterance = new SpeechSynthesisUtterance(`${param.title}, ${param.body}`);
+    speechSynthesis.speak(utterance)
+    console.log(param.id)
+  }
+
   const eve = notes.map((element) => {
     let uploadDate = element.created_at;
     let newDate = uploadDate.split("T");
@@ -35,10 +45,30 @@ const Events = () => {
           </div>
         </div>
 
-        <div className="body">{element.body}</div>
+        <div className="body">
+          <p>{element.body}</p>
+          <div className="features">
+            <ul>
+              <li className="sound" onClick={() => { handleSound(element) }}>
+                <i className="fa-solid fa-volume-high"></i>
+              </li>
+              <li className="copy" onClick={() => { handleCopy(element) }}>
+                <i className="fa-solid fa-copy"></i>
+              </li>
+            </ul>
+          </div>
+        </div>
 
         <div className="btn">
-          <button onClick={() => { handleDelete(element); }} id="del"> Delete </button>
+          <button
+            onClick={() => {
+              handleDelete(element);
+            }}
+            id="del"
+          >
+            {" "}
+            Delete{" "}
+          </button>
           <button className="edit">Edit</button>
         </div>
       </div>
