@@ -235,7 +235,7 @@ a:hover{
   margin-bottom: 10px;
   font-size: 20px;
   padding: 10px;
-
+  overflow: scroll;
   border-radius: 12px;
 }
 
@@ -276,4 +276,11 @@ a:hover{
 .features ul li:hover{
   color: white;
   background-color: blueviolet;
+}
+
+.body > form{
+  margin: 12px;
+}
+#change{
+  color: black;
 }
