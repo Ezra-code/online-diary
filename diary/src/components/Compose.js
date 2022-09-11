@@ -24,18 +24,16 @@ const Compose = () => {
 
         console.log(formData)
 
-        fetch("http://localhost:9292/events", {
-            method: "POST",
-            headers: {
-                "Content-Type":"application/json"
-            },
-            body:JSON.stringify(formData)
+        fetch("https://online-diary-ezra.herokuapp.com/events", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
         })
-            .then(
-            // histry.push('/')
-              
-              
-        )
+          .then
+          // histry.push('/')
+          ();
       
       setNote({
         emotion: "",

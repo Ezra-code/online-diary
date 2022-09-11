@@ -6,9 +6,9 @@ const Home = () => {
     let [emote, setEmote] = useState([])
 
     useEffect(() => {
-        fetch("http://localhost:9292/emotions")
-            .then(r => r.json())
-        .then(data => setEmote(data))
+        fetch("https://online-diary-ezra.herokuapp.com/emotions")
+          .then((r) => r.json())
+          .then((data) => setEmote(data));
     }, [])
 
     console.log(emote)

@@ -11,7 +11,7 @@ const Events = () => {
   })
 
   useEffect(() => {
-    fetch(`http://localhost:9292/emotions/${id}`)
+    fetch(`https://online-diary-ezra.herokuapp.com/emotions/${id}`)
       .then((r) => r.json())
       .then((data) => {
         let parsed = data.events;
